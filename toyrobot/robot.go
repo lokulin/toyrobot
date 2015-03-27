@@ -1,9 +1,9 @@
-package main
+package toyrobot
 
 import "fmt"
 
 type Robot struct {
-  table Table
+  table *Table
   x, y int
   compass []Direction
   placed bool
@@ -14,7 +14,7 @@ type Direction struct {
   x, y int
 }
 
-func NewRobot(table Table) *Robot {
+func NewRobot(table *Table) *Robot {
   return &Robot{ compass: []Direction{Direction{"NORTH",0, 1},
                           Direction{"EAST", 1, 0},
                           Direction{"SOUTH",0,-1},
@@ -23,15 +23,15 @@ func NewRobot(table Table) *Robot {
                  table: table }
 }
 
-func (r *Robot) LookingAt() (x int, y int) {
+func (r *Robot) lookingAt() (x int, y int) {
   x = r.x + r.compass[0].x
   y = r.y + r.compass[0].y
   return x, y
 }
 
 func (r *Robot) Move() {
-  if r.placed && r.table.Contains(r.LookingAt()) {
-      r.x, r.y = r.LookingAt()
+  if r.placed && r.table.Contains(r.lookingAt()) {
+      r.x, r.y = r.lookingAt()
   }
 }
 
@@ -50,7 +50,7 @@ func (r *Robot) Place(xx int, yy int, d string) {
     r.x, r.y = xx, yy
     r.placed = true
     i := 0
-    for _,c := range r.compass { if c.name != d { r.Right(); i++ } }
+    for _,c := range r.compass { if c.name != d { r.Right(); i++ } else { break } }
     if i == len(r.compass) { r.placed = false }
   }
 }
