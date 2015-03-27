@@ -8,6 +8,12 @@ func main() {
     robot.Report()
     robot.Right()
     robot.Report()
+    robot.Right()
+    robot.Report()
+    robot.Right()
+    robot.Report()
+    robot.Right()
+    robot.Report()
     robot.Left()
     robot.Report()
 }

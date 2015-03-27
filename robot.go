@@ -62,7 +62,9 @@ func (r *Robot) Report() {
 }
 
 func CompassIndex(c []Direction, s string) int {
-  i := sort.Search(len(c), func(i int) bool { fmt.Println(c[i])
+  fmt.Println(c)
+  i := sort.Search(len(c), func(i int) bool { fmt.Println(c)
+    fmt.Println(s)
     return c[i].name == s })
   return i
 }
