@@ -5,5 +5,9 @@ type Table struct {
 }
 
 func (t Table) Contains(x int, y int) bool {
-  return true
+  if x >= t.x && x <= t.xx && y >= t.y && y <= t.yy { 
+    return true 
+  } else { 
+    return false
+  }
 }

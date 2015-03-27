@@ -2,7 +2,7 @@ package main
 
 func main() {
     robot := NewRobot(Table{0,0,4,4})
-    robot.Place(0,0,"north")
+    robot.Place(1,1,"NORTH")
     robot.Report()
     robot.Move()
     robot.Report()
@@ -16,4 +16,22 @@ func main() {
     robot.Report()
     robot.Left()
     robot.Report()
-}
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+    robot.Move()
+    robot.Report()
+} 
