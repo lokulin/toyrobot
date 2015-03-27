@@ -1,12 +1,10 @@
 package main
 
-import "fmt"
-
 func main() {
-    robot := Robot{}
-    robot.table = Table{0,0,4,4}
-    robot.placed = true
-    fmt.Println("Robot is: ", robot)
-    robot.move
-    fmt.Println("Robot is: ", robot)
+    robot := NewRobot(Table{0,0,4,4})
+    robot.place(0,0,"north")
+    robot.move()
+    robot.right()
+    robot.left()
+    robot.report()
 }
