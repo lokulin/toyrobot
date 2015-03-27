@@ -3,5 +3,10 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Printf("Hello, world.\n")
+    robot := Robot{}
+    robot.table = Table{0,0,4,4}
+    robot.placed = true
+    fmt.Println("Robot is: ", robot)
+    robot.move
+    fmt.Println("Robot is: ", robot)
 }
