@@ -8,11 +8,10 @@ Testing
 
 Tests are supplied as go tests and a set of example input files.
 
-To run rspec tests:
+To run tests:
 
 ```
-bundle
-bundle exec rspec -f d
+go test
 ```
 
 Running
