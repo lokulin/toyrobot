@@ -47,7 +47,7 @@ func runCmd(cmd string, args []string) {
 
 func run(filename string) {
   file, err := os.Open(filename)
-  if err != nil { fmt.Println(err) }
+  if err != nil { fmt.Fprintln(os.Stderr, err); os.Exit(1) }
   defer file.Close()
   
   robot = toyrobot.NewRobot(toyrobot.NewTable(0,0,4,4))
@@ -57,10 +57,10 @@ func run(filename string) {
     runCmd(validateLine(scanner.Text()))
   }
 
-  if err := scanner.Err(); err != nil { fmt.Println(err) }
+  if err := scanner.Err(); err != nil { fmt.Fprintln(os.Stderr, err); os.Exit(1) }
 }
 
 func main() {
-  if len(os.Args) != 2 { fmt.Println("usage: toyrobot <inputfile>") }
+  if len(os.Args) != 2 { fmt.Fprintln(os.Stderr, "usage: toyrobot <inputfile>"); os.Exit(1) }
   run(os.Args[1])
 } 

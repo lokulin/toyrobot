@@ -30,28 +30,24 @@ func (r *Robot) lookingAt() (x int, y int) {
 }
 
 func (r *Robot) Move() {
-  if r.placed && r.table.Contains(r.lookingAt()) {
+  if r.table.Contains(r.lookingAt()) {
       r.x, r.y = r.lookingAt()
   }
 }
 
 func (r *Robot) Left() {
-  if r.placed {
-      r.compass = append(r.compass[len(r.compass)-1:],r.compass[:len(r.compass)-1]...)
-  }
+  r.compass = append(r.compass[len(r.compass)-1:],r.compass[:len(r.compass)-1]...)
 }
 
 func (r *Robot) Right() {
-  if r.placed { r.compass = append(r.compass[1:],r.compass[:1]...) }
+  r.compass = append(r.compass[1:],r.compass[:1]...)
 }
 
 func (r *Robot) Place(xx int, yy int, d string) {
   if r.table.Contains(xx, yy) {
-    r.x, r.y = xx, yy
-    r.placed = true
     i := 0
     for _,c := range r.compass { if c.name != d { r.Right(); i++ } else { break } }
-    if i == len(r.compass) { r.placed = false }
+    if i < len(r.compass) { r.x, r.y, r.placed = xx, yy, true }
   }
 }
 
