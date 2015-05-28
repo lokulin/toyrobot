@@ -1,6 +1,8 @@
 Toy Robot
 =========
 
+[![Build Status](https://travis-ci.org/lokulin/toyrobot.svg)](https://travis-ci.org/lokulin/toyrobot)
+
 Toy Robot is a minimalistic toy robot golang implementation conforming to the specifications from the [problem description](PROBLEM.md).
 
 Install
