@@ -1,6 +1,8 @@
 Toy Robot
 =========
 
+[![Join the chat at https://gitter.im/lokulin/toyrobot](https://badges.gitter.im/lokulin/toyrobot.svg)](https://gitter.im/lokulin/toyrobot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/lokulin/toyrobot.svg)](https://travis-ci.org/lokulin/toyrobot)
 
 Toy Robot is a minimalistic toy robot golang implementation conforming to the specifications from the [problem description](PROBLEM.md).
